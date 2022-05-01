@@ -1,0 +1,29 @@
+Command Memo
+
+◆APIモードでrails new
+docker-compose run api rails new . --force --no-deps -d mysql --api
+
+◆React Create
+yarn create react-app . --template typescript
+
+◆deviseインストール
+docker-compose run api rails g devise:install
+docker-compose run api rails g devise_token_auth:install User auth
+docker-compose run api rails db:migrate
+
+◆コントローラ作成
+docker-compose run api rails g controller api/v1/auth/registrations
+docker-compose run api rails g controller api/v1/auth/sessions
+
+◆フロント_ライブラリインストール
+yarn add @material-ui/core @material-ui/icons @material-ui/lab @material-ui/pickers @date-io/date-fns@1.3.13 date-fns js-cookie react-router-dom
+yarn add -D @types/js-cookie @types/react-router-dom
+
+
+◆カラム追加
+docker-compose run api rails g migration AddColumnsToUsers
+docker-compose run api rails db:migrate
+
+◆画像アップローダー
+$ docker-compose run api rails g uploader Image
+
